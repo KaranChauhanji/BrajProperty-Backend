@@ -1,4 +1,4 @@
-# LibraryApp-Backend
+# BrajProperty-Backend
 
 ## Step 1:
 
@@ -17,7 +17,7 @@ Now Creating folder structure according toh MVC pattern.
 
 ## Step 3:
 
-Do heath check for the server on app.js file.
+Do heath check for the server on index.js file.
 
 ## Step 4:
 

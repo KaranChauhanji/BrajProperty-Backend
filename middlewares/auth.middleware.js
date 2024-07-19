@@ -25,3 +25,6 @@ const auth = async (req, res, next) => {
     res.status(501).send({ message: error.message });
   }
 };
+
+
+module.exports = auth
