@@ -1,6 +1,6 @@
 const ReviewModel = require("../../models/reviews.model");
 
-const reviewGet = async (req, res) => {
+const reviewGet = async (_, res) => {
   try {
     const review = await ReviewModel.find();
 
