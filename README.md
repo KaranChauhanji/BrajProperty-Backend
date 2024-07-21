@@ -1,40 +1,66 @@
-# BrajProperty-Backend
+# BrajProperty Backend
 
-## Step 1:
+This is the backend for the BrajProperty project. It provides a RESTful API for managing properties, user reviews, and contact messages. This backend is built with Node.js, Express, and MongoDB. It includes authentication and authorization for admin users using JWT and bcrypt.
 
-### Installing all the dependencies :
+## Installation
 
-1. express
-2. jsonwebtoken
-3. mongoose
-4. bcrypt
-5. nodemon (Installed globally)
-6. dotenv
+1. Clone the repository:
 
-## Step 2:
+    ```bash
+    git clone https://github.com/yourusername/brajproperty-backend.git
+    ```
 
-Now Creating folder structure according toh MVC pattern.
+2. Navigate to the project directory:
 
-## Step 3:
+    ```bash
+    cd brajproperty-backend
+    ```
 
-Do heath check for the server on index.js file.
+3. Install dependencies:
 
-## Step 4:
+    ```bash
+    npm install
+    ```
 
-Connected to Db through Atlas.
+4. Create a `.env` file in the root directory and add your MongoDB URI and JWT secret:
 
-## Step 5:
+    ```plaintext
+    MONGO_URI=your_mongo_uri
+    JWT_SECRET=your_jwt_secret
+    ```
 
-Creating models for property and user .
+5. Start the server:
 
-## Step 6:
+    ```bash
+    npm start
+    ```
 
-Completed the authentication of user creating 2 routes:
+    The server will start on `http://localhost:3000`.
 
-1. /register => For user registration.
-2. /login => For user login.
+## Usage
 
-## Step 7:
+### Admin Routes
 
-Auth middleware to check the authorization of user.
+- **Register Admin**: `POST /admin/register`
+- **Login Admin**: `POST /admin/login`
+- **Add Property**: `POST /admin/property/add`
+- **Edit Property**: `PUT /admin/property/edit/:id`
+- **Delete Property**: `DELETE /admin/property/delete/:id`
+
+### Contact Us Routes
+
+- **Send Contact Message**: `POST /contact`
+
+### Property Routes
+
+- **Get Properties**: `GET /property`
+
+### Review Routes
+
+- **Add Review**: `POST /review/add`
+- **Get Reviews**: `GET /review`
+
+### User Routes
+
+- **Register User**: `POST /user/register`
 
