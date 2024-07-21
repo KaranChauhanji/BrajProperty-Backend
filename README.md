@@ -1,40 +1,89 @@
-# BrajProperty-Backend
+# BrajProperty Backend
 
-## Step 1:
+This is the backend for the BrajProperty project. It provides a RESTful API for managing properties, user reviews, and contact messages. This backend is built with Node.js, Express, and MongoDB. It includes authentication and authorization for admin users using JWT and bcrypt.
 
-### Installing all the dependencies :
+## Table of Contents
 
-1. express
-2. jsonwebtoken
-3. mongoose
-4. bcrypt
-5. nodemon (Installed globally)
-6. dotenv
+- [Installation](#installation)
+- [Usage](#usage)
+- [Models](#models)
+- [Routes](#routes)
+- [Middleware](#middleware)
+- [Controllers](#controllers)
+- [Technologies](#technologies)
+- [License](#license)
 
-## Step 2:
+## Installation
 
-Now Creating folder structure according toh MVC pattern.
+1. Clone the repository:
 
-## Step 3:
+    ```bash
+    git clone https://github.com/yourusername/brajproperty-backend.git
+    ```
 
-Do heath check for the server on index.js file.
+2. Navigate to the project directory:
 
-## Step 4:
+    ```bash
+    cd brajproperty-backend
+    ```
 
-Connected to Db through Atlas.
+3. Install dependencies:
 
-## Step 5:
+    ```bash
+    npm install
+    ```
 
-Creating models for property and user .
+4. Create a `.env` file in the root directory and add your MongoDB URI and JWT secret:
 
-## Step 6:
+    ```plaintext
+    MONGO_URI=your_mongo_uri
+    JWT_SECRET=your_jwt_secret
+    ```
 
-Completed the authentication of user creating 2 routes:
+5. Start the server:
 
-1. /register => For user registration.
-2. /login => For user login.
+    ```bash
+    npm start
+    ```
 
-## Step 7:
+    The server will start on `http://localhost:3000`.
 
-Auth middleware to check the authorization of user.
+## Usage
 
+### Admin Routes
+
+- **Register Admin**: `POST /admin/register`
+- **Login Admin**: `POST /admin/login`
+- **Add Property**: `POST /admin/property`
+- **Edit Property**: `PUT /admin/property/:id`
+- **Delete Property**: `DELETE /admin/property/:id`
+
+### Contact Us Routes
+
+- **Send Contact Message**: `POST /contactus`
+
+### Property Routes
+
+- **Get Properties**: `GET /property`
+
+### Review Routes
+
+- **Add Review**: `POST /review`
+- **Get Reviews**: `GET /review`
+
+### User Routes
+
+- **Register User**: `POST /user/register`
+- **Login User**: `POST /user/login`
+
+## Models
+
+### Admin Model
+
+```javascript
+const mongoose = require('mongoose');
+const adminSchema = new mongoose.Schema({
+  username: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+});
+module.exports = mongoose.model('Admin', adminSchema);
