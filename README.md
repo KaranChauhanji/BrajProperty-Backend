@@ -54,13 +54,13 @@ This is the backend for the BrajProperty project. It provides a RESTful API for 
 
 - **Register Admin**: `POST /admin/register`
 - **Login Admin**: `POST /admin/login`
-- **Add Property**: `POST /admin/property`
-- **Edit Property**: `PUT /admin/property/:id`
-- **Delete Property**: `DELETE /admin/property/:id`
+- **Add Property**: `POST /admin/property/add`
+- **Edit Property**: `PUT /admin/property/edit/:id`
+- **Delete Property**: `DELETE /admin/property/delete/:id`
 
 ### Contact Us Routes
 
-- **Send Contact Message**: `POST /contactus`
+- **Send Contact Message**: `POST /contact`
 
 ### Property Routes
 
@@ -68,22 +68,10 @@ This is the backend for the BrajProperty project. It provides a RESTful API for 
 
 ### Review Routes
 
-- **Add Review**: `POST /review`
+- **Add Review**: `POST /review/add`
 - **Get Reviews**: `GET /review`
 
 ### User Routes
 
 - **Register User**: `POST /user/register`
-- **Login User**: `POST /user/login`
 
-## Models
-
-### Admin Model
-
-```javascript
-const mongoose = require('mongoose');
-const adminSchema = new mongoose.Schema({
-  username: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-});
-module.exports = mongoose.model('Admin', adminSchema);
