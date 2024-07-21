@@ -2,17 +2,6 @@
 
 This is the backend for the BrajProperty project. It provides a RESTful API for managing properties, user reviews, and contact messages. This backend is built with Node.js, Express, and MongoDB. It includes authentication and authorization for admin users using JWT and bcrypt.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Models](#models)
-- [Routes](#routes)
-- [Middleware](#middleware)
-- [Controllers](#controllers)
-- [Technologies](#technologies)
-- [License](#license)
-
 ## Installation
 
 1. Clone the repository:
