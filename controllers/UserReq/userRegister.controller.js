@@ -1,7 +1,7 @@
 const UserModel = require("../../models/user.model");
 
 const userRegister = async (req, res) => {
-  const { username, role, phone } = req.body;
+  const { username, phone } = req.body;
   const existingUser = await UserModel.findOne({ phone });
 
   if (existingUser) {
@@ -11,7 +11,6 @@ const userRegister = async (req, res) => {
   try {
     const user = new UserModel({
       username,
-      role,
       phone,
     });
     await user.save();
